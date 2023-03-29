@@ -112,7 +112,7 @@ public class CDL: NSObject {
     }
     
     public class IPhone: NSObject {
-        static var deviceName       : DeviceName?
+        public static var deviceName       : DeviceName?
         static var iPhoneName       : String?
 //        var appVersion     : String?
         static var battery          : Battery?
@@ -121,7 +121,9 @@ public class CDL: NSObject {
         static var systemVersion    : String?
         
         /// like "iPhone15,3" is iPhone 14 Pro Max, "iPhone15,2" is iPhone 14 Pro
-        static var deviceModel      : DeviceModel?
+        public static var deviceModel      : DeviceModel? = {
+            return DeviceModel(id: CDL.getIdentifier())
+        }()
         static var macAddress: String?
         // TODO: ip地址要实现动态更新
         static var deviceIP: String?
@@ -138,6 +140,10 @@ public class CDL: NSObject {
         static var CPU: CPU?
         static var Disk: Disk?
         static var Memory: Memory?
+        
+        private override init() {
+            super.init()
+        }
         
         // TODO: 添加实例
         /// Get device name string. Can be be modified through the dictionary. For example:
@@ -201,8 +207,9 @@ public class CDL: NSObject {
     
     // MARK: - DeviceModel and DeviceName
     /// https://www.theiphonewiki.com/wiki/Models iPhone 节 Identifier 列
-    public enum DeviceModel {
+    public enum DeviceModel:String {
         case unknownIPhoneDeviceModel
+        case simulator_x86_64
         
         case iPhone1_1
         case iPhone1_2
@@ -254,11 +261,27 @@ public class CDL: NSObject {
         case iPhone15_2
         case iPhone15_3
         
+        init(id: String) {
+            switch id {
+            case "x86_64":
+                self = .simulator_x86_64
+            case "iPhone1,1":
+                self = .iPhone1_1
+            // TODO: 补上
+            case "iPhone12,8":
+                self = .iPhone12_8
+                
+            default:
+                self = .unknownIPhoneDeviceModel
+            }
+        }
+        
     }
     
     /// https://www.theiphonewiki.com/wiki/Models iPhone 节 Generation 列
     public enum DeviceName : String {
         case unknownIPoneDeviceName
+        case simulator_x86_64
         
         case iPhone
         case iPhone_3G
@@ -321,6 +344,8 @@ public class CDL: NSObject {
         switch dm {
         case .unknownIPhoneDeviceModel:
             return .unknownIPoneDeviceName
+        case .simulator_x86_64:
+            return .simulator_x86_64
             
         case .iPhone1_1:
             return .iPhone
