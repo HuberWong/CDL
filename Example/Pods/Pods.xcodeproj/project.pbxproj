@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		032690E2566EF26444BEC60D02FA3C08 /* CDL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F65E0560393D9527CF9CB06EA9A1C5 /* CDL.swift */; };
+		051093232DD7A341B33FF326722DC26D /* CDL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D363FAC4323586E75FAB77F225BEC2A /* CDL.swift */; };
 		0E159C05E0364FE33AF382F33CFB0BE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		322D1307493ADC49897B22C217184D06 /* Pods-Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D7C498FA339E02BD53ECB8916CEA8E /* Pods-Example-dummy.m */; };
-		4EA853B900EF910BAE2D7148273BE830 /* CDL-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1461770267C0A7B882F4FBBA61F2A686 /* CDL-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		99419824FCDEB064AEC84938E8E03AD9 /* CDL-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B5CC0E28187774FAB61A6ED697AD0C /* CDL-dummy.m */; };
+		4EA853B900EF910BAE2D7148273BE830 /* CDL-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E357743BB079F625CB249C4F21F539D7 /* CDL-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99419824FCDEB064AEC84938E8E03AD9 /* CDL-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF38A02802909BEAEE50A50663CE1AB /* CDL-dummy.m */; };
 		AB264E8CD720F49CF1E3CE39A66AB629 /* Pods-Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7825A90E082A1582EB16256B0E722B3F /* Pods-Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ADEA48FC9031DCB215B98A4344800B1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BEC84E6D89D433C8413E9282D206F468 /* PBXContainerItemProxy */ = {
+		651ADA562966C37D19A654EBEC48CEB6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -27,28 +27,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1461770267C0A7B882F4FBBA61F2A686 /* CDL-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CDL-umbrella.h"; sourceTree = "<group>"; };
+		1519716C1436D48075CA0DA88A7A26B3 /* CDL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CDL.release.xcconfig; sourceTree = "<group>"; };
 		1F667CC0E19EAF34E5A4119E2121F585 /* Pods-Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Example"; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		243410B9535472556EA4BB6DBC133A0D /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		31C1D37707DFAA5E6A164BCC07834264 /* Pods-Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Example-Info.plist"; sourceTree = "<group>"; };
-		32F1A4A929938C4C39E328BA0D74C574 /* CDL-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CDL-Info.plist"; sourceTree = "<group>"; };
 		35C305D3797C284E6F5BAA1D3E6F9BF8 /* Pods-Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Example.modulemap"; sourceTree = "<group>"; };
 		441854E35F81731E63E53DC7E4EEAD9D /* Pods-Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4B57622ECF7DDC7F23CFAF92FEE16903 /* CDL-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CDL-Info.plist"; sourceTree = "<group>"; };
 		65B75B403441EB89F0D62550E5F2F08A /* CDL */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CDL; path = CDL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D363FAC4323586E75FAB77F225BEC2A /* CDL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CDL.swift; path = CDL/CDL/CDL.swift; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7825A90E082A1582EB16256B0E722B3F /* Pods-Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Example-umbrella.h"; sourceTree = "<group>"; };
-		96B072151E4B9B1713380E7BCD4A195E /* CDL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CDL.debug.xcconfig; sourceTree = "<group>"; };
+		86F75AA59535C4D614B19D6B008410A4 /* CDL-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CDL-prefix.pch"; sourceTree = "<group>"; };
+		8CF38A02802909BEAEE50A50663CE1AB /* CDL-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CDL-dummy.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F89E38F32C0D86C8B428D6906BD15C6 /* CDL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CDL.release.xcconfig; sourceTree = "<group>"; };
 		AFECBC24E09D0D25F822C27BD944AFD4 /* Pods-Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Example-frameworks.sh"; sourceTree = "<group>"; };
-		B1D0F2745C3207AFF781A5505C655071 /* CDL.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = CDL.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B45138496B85A072654D1D0F8EBBEDE5 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		C5F65E0560393D9527CF9CB06EA9A1C5 /* CDL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CDL.swift; path = CDL/CDL.swift; sourceTree = "<group>"; };
-		D366DA0C5859D1EDCD0032F7BA997C6D /* CDL.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CDL.modulemap; sourceTree = "<group>"; };
-		D5B5CC0E28187774FAB61A6ED697AD0C /* CDL-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CDL-dummy.m"; sourceTree = "<group>"; };
 		D6D7C498FA339E02BD53ECB8916CEA8E /* Pods-Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Example-dummy.m"; sourceTree = "<group>"; };
-		E281FDB2D03FAACC44CC84C4DE870375 /* CDL-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CDL-prefix.pch"; sourceTree = "<group>"; };
+		E25A1FC5E3C60C6529F433C538F63A1F /* CDL.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CDL.modulemap; sourceTree = "<group>"; };
+		E357743BB079F625CB249C4F21F539D7 /* CDL-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CDL-umbrella.h"; sourceTree = "<group>"; };
 		EA21B344259B58996DB73382B1B1521F /* Pods-Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		F01E9B5A8C25D5DD4F571E7CA737130E /* CDL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CDL.debug.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,19 +78,37 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		8A40754DFB3FF27B38012A3830AFEFF5 /* Support Files */ = {
+		71B42E4B555438CDA080D787F25E89E5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D366DA0C5859D1EDCD0032F7BA997C6D /* CDL.modulemap */,
-				D5B5CC0E28187774FAB61A6ED697AD0C /* CDL-dummy.m */,
-				32F1A4A929938C4C39E328BA0D74C574 /* CDL-Info.plist */,
-				E281FDB2D03FAACC44CC84C4DE870375 /* CDL-prefix.pch */,
-				1461770267C0A7B882F4FBBA61F2A686 /* CDL-umbrella.h */,
-				96B072151E4B9B1713380E7BCD4A195E /* CDL.debug.xcconfig */,
-				9F89E38F32C0D86C8B428D6906BD15C6 /* CDL.release.xcconfig */,
+				7B811C2B0CF97A87C42CC6B73359E088 /* CDL */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7B811C2B0CF97A87C42CC6B73359E088 /* CDL */ = {
+			isa = PBXGroup;
+			children = (
+				6D363FAC4323586E75FAB77F225BEC2A /* CDL.swift */,
+				8339A8635D3BC674635AF87FB4A08F70 /* Support Files */,
+			);
+			name = CDL;
+			path = CDL;
+			sourceTree = "<group>";
+		};
+		8339A8635D3BC674635AF87FB4A08F70 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E25A1FC5E3C60C6529F433C538F63A1F /* CDL.modulemap */,
+				8CF38A02802909BEAEE50A50663CE1AB /* CDL-dummy.m */,
+				4B57622ECF7DDC7F23CFAF92FEE16903 /* CDL-Info.plist */,
+				86F75AA59535C4D614B19D6B008410A4 /* CDL-prefix.pch */,
+				E357743BB079F625CB249C4F21F539D7 /* CDL-umbrella.h */,
+				F01E9B5A8C25D5DD4F571E7CA737130E /* CDL.debug.xcconfig */,
+				1519716C1436D48075CA0DA88A7A26B3 /* CDL.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Example/Pods/Target Support Files/CDL";
+			path = "../Target Support Files/CDL";
 			sourceTree = "<group>";
 		};
 		8D2D53A5C4E5D8D870C19A605A5BA001 /* Products */ = {
@@ -120,17 +137,6 @@
 			path = "Target Support Files/Pods-Example";
 			sourceTree = "<group>";
 		};
-		B8578714F1561A2C29C3F3CAABB84E9A /* CDL */ = {
-			isa = PBXGroup;
-			children = (
-				C5F65E0560393D9527CF9CB06EA9A1C5 /* CDL.swift */,
-				E8266CD83F99BA269050D9D0665A8B83 /* Pod */,
-				8A40754DFB3FF27B38012A3830AFEFF5 /* Support Files */,
-			);
-			name = CDL;
-			path = ../../CDL;
-			sourceTree = "<group>";
-		};
 		CE2E825F08D3AD0FD76E6D78D7512ED0 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,8 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				FF8714706026439A34A99A8CAEDD33EA /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				71B42E4B555438CDA080D787F25E89E5 /* Pods */,
 				8D2D53A5C4E5D8D870C19A605A5BA001 /* Products */,
 				CE2E825F08D3AD0FD76E6D78D7512ED0 /* Targets Support Files */,
 			);
@@ -156,22 +162,6 @@
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E8266CD83F99BA269050D9D0665A8B83 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				B1D0F2745C3207AFF781A5505C655071 /* CDL.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		FF8714706026439A34A99A8CAEDD33EA /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B8578714F1561A2C29C3F3CAABB84E9A /* CDL */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +198,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				9FF99A7389EE7143BD713A61EA0E6BD2 /* PBXTargetDependency */,
+				4708CB01B16646ACF0D7ADBC78683EB7 /* PBXTargetDependency */,
 			);
 			name = "Pods-Example";
 			productName = Pods_Example;
@@ -291,7 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				032690E2566EF26444BEC60D02FA3C08 /* CDL.swift in Sources */,
+				051093232DD7A341B33FF326722DC26D /* CDL.swift in Sources */,
 				99419824FCDEB064AEC84938E8E03AD9 /* CDL-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,18 +289,18 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9FF99A7389EE7143BD713A61EA0E6BD2 /* PBXTargetDependency */ = {
+		4708CB01B16646ACF0D7ADBC78683EB7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CDL;
 			target = BEB7D520C4B81A5B0C39946DC547DAAC /* CDL */;
-			targetProxy = BEC84E6D89D433C8413E9282D206F468 /* PBXContainerItemProxy */;
+			targetProxy = 651ADA562966C37D19A654EBEC48CEB6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1F1874900A1F63C128E8E30E4FFB0692 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96B072151E4B9B1713380E7BCD4A195E /* CDL.debug.xcconfig */;
+			baseConfigurationReference = F01E9B5A8C25D5DD4F571E7CA737130E /* CDL.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -345,7 +335,7 @@
 		};
 		3417442920CF18151918A4F038F818A8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F89E38F32C0D86C8B428D6906BD15C6 /* CDL.release.xcconfig */;
+			baseConfigurationReference = 1519716C1436D48075CA0DA88A7A26B3 /* CDL.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

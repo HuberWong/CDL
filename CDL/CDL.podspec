@@ -3,7 +3,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "CDL"
-  spec.version      = "0.1.1"
+  spec.version      = "0.1.2"
   spec.summary      = "A iPhone information lib."
 
   spec.description  = "CDL(Crispy Duck Leg) is an iPhone information library including battery information, screen size, etc."
