@@ -14,8 +14,204 @@ import UIKit
 
 /// `CDL` means crispy duck leg 🦆🍗
 /// CDL 的意思是脆皮鸭腿
-public class CDL: NSObject {
+///
+
+public let CDL = IPhone.default
+
+public class cdl: NSObject {
     
+    public class IPhone: NSObject {
+
+        public static var deviceModel : DeviceModel = DeviceModel(id: CDL.getIdentifier())
+        public static var deviceName  : DeviceName  = DeviceNameFrom(IPhone.deviceModel)
+        
+        /// When iOS 15 and earlier, `iPhoneName` is user-assigned device name, such as "Huber's iPhone SE 2".
+        ///  When iOS 16 and later, `iPhoneName` is Generic device name, such as "iPhone".
+        /// For more, see https       ://developer.apple.com/documentation/uikit/uidevice/1620015-name
+        public static var iPhoneName  : String      = UIDevice.current.name
+        public static var appVersion              : String = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+        public static var systemName       : String = UIDevice.current.systemName
+        public static var systemVersion    : String = UIDevice.current.systemVersion
+
+        static var battery          : Battery?
+//        var localizedModel : String?
+        
+        /// like "iPhone15,3" is iPhone 14 Pro Max, "iPhone15,2" is iPhone 14 Pro
+
+        static var macAddress: String?
+        // TODO: ip地址要实现动态更新
+        static var deviceIP: String?
+        public static var lastRestartDate: () -> Date = {
+            return Date().addingTimeInterval(-ProcessInfo.processInfo.systemUptime)
+        }
+        
+        /// Identifier for Advertisers.
+        /// All Apps on the same device will get the same value, which is specially designed by Apple
+        ///  for various advertising providers to track users. User may restrict the use of
+        ///  `identifier for Advertisers`, so the id may not get the value, but , Apple
+        ///   allows tracking by default and most users don't know that there is such a setting.
+        static var idfa: String?
+//        var uuid : String // UUID is Universally Unique Identifier
+//        var deviceColor: String?
+        static var CPU: CPU?
+        static var Disk: Disk?
+        static var Memory: Memory?
+        
+        private override init() {
+            super.init()
+        }
+        
+        // TODO: 添加实例
+        /// Get device name string. Can be be modified through the dictionary. For example:
+        /// ```swift
+        ///  print("wori")
+        /// ```
+        /// - Parameter dic: modified dictionary
+        /// - Returns: String of device Name
+        static func deviceNameString(modifiedDic: [DeviceName:String]? = nil) -> String {
+            let CDLDic: [DeviceName: String] = [
+                .unknownIPoneDeviceName: "unknownIPoneDeviceName",
+                .simulator_x86_64:"simulator_x86_64",
+                
+                // TODO: 补完
+                .iPhone:"",
+                .iPhone_3G:"",
+                .iPhone_3GS:"",
+                .iPhone_4:"",
+                .iPhone_4S:"",
+                .iPhone_5:"",
+                .iPhone_5c:"",
+                .iPhone_5s:"",
+                .iPhone_6:"",
+                .iPhone_6_Plus:"",
+                .iPhone_6s:"",
+                .iPhone_6s_Plus:"",
+                .iPhone_SE:"",
+                .iPhone_7:"",
+                .iPhone_7_Plus:"",
+                .iPhone_8:"",
+                .iPhone_8_Plus:"",
+                .iPhone_X:"",
+                .iPhone_XR:"",
+                .iPhone_XS:"",
+                .iPhone_XS_Max:"",
+                .iPhone_11:"",
+                .iPhone_11_Pro:"",
+                .iPhone_11_Pro_Max:"",
+                .iPhone_SE_2:"",
+                .iPhone_12_mini:"",
+                .iPhone_12:"",
+                .iPhone_12_Pro:"",
+                .iPhone_12_Pro_Max:"",
+                .iPhone_13_mini:"",
+                .iPhone_13:"",
+                .iPhone_13_Pro:"",
+                .iPhone_13_Pro_Max:"",
+                .iPhone_SE_3:"",
+                .iPhone_14:"",
+                .iPhone_14_Plus:"",
+                .iPhone_14_Pro:"",
+                .iPhone_14_Pro_Max:"",
+            ]
+            
+            if let str = modifiedDic?[IPhone.deviceName] {
+                return str
+            } else if let str = CDLDic[IPhone.deviceName] {
+                return str
+            } else {
+                fatalError("this iPhone not in CDLDic")
+            }
+        }
+        
+        static private func DeviceNameFrom(_ dm: DeviceModel) -> DeviceName {
+            switch dm {
+            case .unknownIPhoneDeviceModel:
+                return .unknownIPoneDeviceName
+            case .simulator_x86_64:
+                return .simulator_x86_64
+                
+            case .iPhone1_1:
+                return .iPhone
+            case .iPhone1_2:
+                return .iPhone_3G
+            case .iPhone2_1:
+                return .iPhone_3GS
+            case .iPhone3_1, .iPhone3_2, .iPhone3_3:
+                return .iPhone_4
+            case .iPhone4_1:
+                return .iPhone_4S
+            case .iPhone5_1, .iPhone5_2:
+                return .iPhone_5
+            case .iPhone5_3, .iPhone5_4:
+                return .iPhone_5c
+            case .iPhone6_1, .iPhone6_2:
+                return .iPhone_5s
+            case .iPhone7_1:
+                return .iPhone_6_Plus
+            case .iPhone7_2:
+                return .iPhone_6
+            case .iPhone8_1:
+                return .iPhone_6s
+            case .iPhone8_2:
+                return .iPhone_6s_Plus
+            case .iPhone8_4:
+                return .iPhone_SE
+            case .iPhone9_1, .iPhone9_3:
+                return .iPhone_7
+            case .iPhone9_2, .iPhone9_4:
+                return .iPhone_7_Plus
+            case .iPhone10_1, .iPhone10_4:
+                return .iPhone_8
+            case .iPhone10_2, .iPhone10_5:
+                return .iPhone_8_Plus
+            case .iPhone10_3, .iPhone10_6:
+                return .iPhone_X
+            case .iPhone11_2:
+                return .iPhone_XS
+            case .iPhone11_4, .iPhone11_6:
+                return .iPhone_XS_Max
+            case .iPhone11_8:
+                return .iPhone_XR
+            case .iPhone12_1:
+                return .iPhone_11
+            case .iPhone12_3:
+                return .iPhone_11_Pro
+            case .iPhone12_5:
+                return .iPhone_11_Pro_Max
+            case .iPhone12_8:
+                return .iPhone_SE_2
+            case .iPhone13_1:
+                return .iPhone_12_mini
+            case .iPhone13_2:
+                return .iPhone_12
+            case .iPhone13_3:
+                return .iPhone_12_Pro
+            case .iPhone13_4:
+                return .iPhone_12_Pro_Max
+            case .iPhone14_2:
+                return .iPhone_13_Pro
+            case .iPhone14_3:
+                return .iPhone_13_Pro_Max
+            case .iPhone14_4:
+                return .iPhone_13_mini
+            case .iPhone14_5:
+                return .iPhone_13
+            case .iPhone14_6:
+                return .iPhone_SE_3
+            case .iPhone14_7:
+                return .iPhone_14
+            case .iPhone14_8:
+                return .iPhone_14_Plus
+            case .iPhone15_2:
+                return .iPhone_14_Pro
+            case .iPhone15_3:
+                return .iPhone_14_Pro_Max
+            }
+        }
+
+        
+    }
+
     
     static private func getIdentifier() -> String {
         var systemInfo = utsname()
@@ -111,103 +307,10 @@ public class CDL: NSObject {
         
     }
     
-    public class IPhone: NSObject {
-        public static var deviceName       : DeviceName?
-        static var iPhoneName       : String?
-//        var appVersion     : String?
-        static var battery          : Battery?
-//        var localizedModel : String?
-        static var systemName       : String?
-        static var systemVersion    : String?
-        
-        /// like "iPhone15,3" is iPhone 14 Pro Max, "iPhone15,2" is iPhone 14 Pro
-        public static var deviceModel      : DeviceModel? = {
-            return DeviceModel(id: CDL.getIdentifier())
-        }()
-        static var macAddress: String?
-        // TODO: ip地址要实现动态更新
-        static var deviceIP: String?
-        static var lastRestartDate: TimeInterval?
-        
-        /// Identifier for Advertisers.
-        /// All Apps on the same device will get the same value, which is specially designed by Apple
-        ///  for various advertising providers to track users. User may restrict the use of
-        ///  `identifier for Advertisers`, so the id may not get the value, but , Apple
-        ///   allows tracking by default and most users don't know that there is such a setting.
-        static var idfa: String?
-//        var uuid : String // UUID is Universally Unique Identifier
-//        var deviceColor: String?
-        static var CPU: CPU?
-        static var Disk: Disk?
-        static var Memory: Memory?
-        
-        private override init() {
-            super.init()
-        }
-        
-        // TODO: 添加实例
-        /// Get device name string. Can be be modified through the dictionary. For example:
-        /// ```swift
-        ///  print("wori")
-        /// ```
-        /// - Parameter dic: modified dictionary
-        /// - Returns: String of device Name
-        public static func deviceNameString(modifiedDic: [DeviceName:String]? = nil) -> String {
-            let CDLDic: [DeviceName: String] = [
-                .iPhone:"",
-                .iPhone_3G:"",
-                .iPhone_3GS:"",
-                .iPhone_4:"",
-                .iPhone_4S:"",
-                .iPhone_5:"",
-                .iPhone_5c:"",
-                .iPhone_5s:"",
-                .iPhone_6:"",
-                .iPhone_6_Plus:"",
-                .iPhone_6s:"",
-                .iPhone_6s_Plus:"",
-                .iPhone_SE:"",
-                .iPhone_7:"",
-                .iPhone_7_Plus:"",
-                .iPhone_8:"",
-                .iPhone_8_Plus:"",
-                .iPhone_X:"",
-                .iPhone_XR:"",
-                .iPhone_XS:"",
-                .iPhone_XS_Max:"",
-                .iPhone_11:"",
-                .iPhone_11_Pro:"",
-                .iPhone_11_Pro_Max:"",
-                .iPhone_SE_2:"",
-                .iPhone_12_mini:"",
-                .iPhone_12:"",
-                .iPhone_12_Pro:"",
-                .iPhone_12_Pro_Max:"",
-                .iPhone_13_mini:"",
-                .iPhone_13:"",
-                .iPhone_13_Pro:"",
-                .iPhone_13_Pro_Max:"",
-                .iPhone_SE_3:"",
-                .iPhone_14:"",
-                .iPhone_14_Plus:"",
-                .iPhone_14_Pro:"",
-                .iPhone_14_Pro_Max:"",
-            ]
-            
-            if let str = modifiedDic?[IPhone.deviceName!] {
-                return str
-            } else if let str = CDLDic[IPhone.deviceName!] {
-                return str
-            } else {
-                fatalError("this iPhone not in CDLDic")
-            }
-        }
-        
-    }
     
     // MARK: - DeviceModel and DeviceName
     /// https://www.theiphonewiki.com/wiki/Models iPhone 节 Identifier 列
-    public enum DeviceModel:String {
+    public enum DeviceModel {
         case unknownIPhoneDeviceModel
         case simulator_x86_64
         
@@ -279,7 +382,7 @@ public class CDL: NSObject {
     }
     
     /// https://www.theiphonewiki.com/wiki/Models iPhone 节 Generation 列
-    public enum DeviceName : String {
+    public enum DeviceName {
         case unknownIPoneDeviceName
         case simulator_x86_64
         
@@ -321,17 +424,73 @@ public class CDL: NSObject {
         case iPhone_14_Plus
         case iPhone_14_Pro
         case iPhone_14_Pro_Max
+        
+        public func toString(modifiedDic: [DeviceName:String]? = nil) -> String {
+            let CDLDic: [DeviceName: String] = [
+                .unknownIPoneDeviceName: "unknownIPoneDeviceName",
+                .simulator_x86_64:"simulator_x86_64",
+                
+                // TODO: 补完
+                .iPhone:"",
+                .iPhone_3G:"",
+                .iPhone_3GS:"",
+                .iPhone_4:"",
+                .iPhone_4S:"",
+                .iPhone_5:"",
+                .iPhone_5c:"",
+                .iPhone_5s:"",
+                .iPhone_6:"",
+                .iPhone_6_Plus:"",
+                .iPhone_6s:"",
+                .iPhone_6s_Plus:"",
+                .iPhone_SE:"",
+                .iPhone_7:"",
+                .iPhone_7_Plus:"",
+                .iPhone_8:"",
+                .iPhone_8_Plus:"",
+                .iPhone_X:"",
+                .iPhone_XR:"",
+                .iPhone_XS:"",
+                .iPhone_XS_Max:"",
+                .iPhone_11:"",
+                .iPhone_11_Pro:"",
+                .iPhone_11_Pro_Max:"",
+                .iPhone_SE_2:"",
+                .iPhone_12_mini:"",
+                .iPhone_12:"",
+                .iPhone_12_Pro:"",
+                .iPhone_12_Pro_Max:"",
+                .iPhone_13_mini:"",
+                .iPhone_13:"",
+                .iPhone_13_Pro:"",
+                .iPhone_13_Pro_Max:"",
+                .iPhone_SE_3:"",
+                .iPhone_14:"",
+                .iPhone_14_Plus:"",
+                .iPhone_14_Pro:"",
+                .iPhone_14_Pro_Max:"",
+            ]
+            
+            if let str = modifiedDic?[IPhone.deviceName] {
+                return str
+            } else if let str = CDLDic[IPhone.deviceName] {
+                return str
+            } else {
+                fatalError("this iPhone not in CDLDic")
+            }
+
+        }
     }
     
 
     
     // MARK: - Battery
-    func battery(from dm: DeviceModel) -> Battery {
+    func batteryFrom(_ dm: DeviceModel) -> Battery {
         return Battery(capacity: 0, voltage: 0)
     }
     
     // MARK: - CPU
-    func CPU(from dm: DeviceModel) -> CPU {
+    func CPUFrom(_ dm: DeviceModel) -> CPU {
         return CDL.CPU(count: 0)
     }
     
@@ -340,91 +499,6 @@ public class CDL: NSObject {
     /// the same device name.
     /// - Parameter dm: The device model
     /// - Returns: The device name
-    func DeviceName(from dm: DeviceModel) -> DeviceName {
-        switch dm {
-        case .unknownIPhoneDeviceModel:
-            return .unknownIPoneDeviceName
-        case .simulator_x86_64:
-            return .simulator_x86_64
-            
-        case .iPhone1_1:
-            return .iPhone
-        case .iPhone1_2:
-            return .iPhone_3G
-        case .iPhone2_1:
-            return .iPhone_3GS
-        case .iPhone3_1, .iPhone3_2, .iPhone3_3:
-            return .iPhone_4
-        case .iPhone4_1:
-            return .iPhone_4S
-        case .iPhone5_1, .iPhone5_2:
-            return .iPhone_5
-        case .iPhone5_3, .iPhone5_4:
-            return .iPhone_5c
-        case .iPhone6_1, .iPhone6_2:
-            return .iPhone_5s
-        case .iPhone7_1:
-            return .iPhone_6_Plus
-        case .iPhone7_2:
-            return .iPhone_6
-        case .iPhone8_1:
-            return .iPhone_6s
-        case .iPhone8_2:
-            return .iPhone_6s_Plus
-        case .iPhone8_4:
-            return .iPhone_SE
-        case .iPhone9_1, .iPhone9_3:
-            return .iPhone_7
-        case .iPhone9_2, .iPhone9_4:
-            return .iPhone_7_Plus
-        case .iPhone10_1, .iPhone10_4:
-            return .iPhone_8
-        case .iPhone10_2, .iPhone10_5:
-            return .iPhone_8_Plus
-        case .iPhone10_3, .iPhone10_6:
-            return .iPhone_X
-        case .iPhone11_2:
-            return .iPhone_XS
-        case .iPhone11_4, .iPhone11_6:
-            return .iPhone_XS_Max
-        case .iPhone11_8:
-            return .iPhone_XR
-        case .iPhone12_1:
-            return .iPhone_11
-        case .iPhone12_3:
-            return .iPhone_11_Pro
-        case .iPhone12_5:
-            return .iPhone_11_Pro_Max
-        case .iPhone12_8:
-            return .iPhone_SE_2
-        case .iPhone13_1:
-            return .iPhone_12_mini
-        case .iPhone13_2:
-            return .iPhone_12
-        case .iPhone13_3:
-            return .iPhone_12_Pro
-        case .iPhone13_4:
-            return .iPhone_12_Pro_Max
-        case .iPhone14_2:
-            return .iPhone_13_Pro
-        case .iPhone14_3:
-            return .iPhone_13_Pro_Max
-        case .iPhone14_4:
-            return .iPhone_13_mini
-        case .iPhone14_5:
-            return .iPhone_13
-        case .iPhone14_6:
-            return .iPhone_SE_3
-        case .iPhone14_7:
-            return .iPhone_14
-        case .iPhone14_8:
-            return .iPhone_14_Plus
-        case .iPhone15_2:
-            return .iPhone_14_Pro
-        case .iPhone15_3:
-            return .iPhone_14_Pro_Max
-        }
-    }
     
     // MARK: - Networking
     

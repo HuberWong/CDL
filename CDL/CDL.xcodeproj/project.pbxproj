@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D029295E29D84B3D00D6C7AC /* IPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = D029295D29D84B3D00D6C7AC /* IPhone.swift */; };
+		D029296029D84B6E00D6C7AC /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D029295F29D84B6E00D6C7AC /* Battery.swift */; };
+		D029296229D84B9300D6C7AC /* SOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D029296129D84B9300D6C7AC /* SOC.swift */; };
+		D029296429D84B9F00D6C7AC /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = D029296329D84B9F00D6C7AC /* Disk.swift */; };
+		D029296629D84BAF00D6C7AC /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D029296529D84BAF00D6C7AC /* Memory.swift */; };
+		D029296829D84BCB00D6C7AC /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D029296729D84BCB00D6C7AC /* DeviceModel.swift */; };
+		D029296A29D84BD600D6C7AC /* DeviceName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D029296929D84BD600D6C7AC /* DeviceName.swift */; };
+		D029296C29D84C0500D6C7AC /* MacAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D029296B29D84C0500D6C7AC /* MacAddress.swift */; };
+		D029296E29D84C1000D6C7AC /* IPAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D029296D29D84C1000D6C7AC /* IPAddress.swift */; };
 		D062AF5429D3AC9D00263A12 /* CDL.h in Headers */ = {isa = PBXBuildFile; fileRef = D062AF5329D3AC9D00263A12 /* CDL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D062AF5B29D3ACDC00263A12 /* CDL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062AF5A29D3ACDC00263A12 /* CDL.swift */; };
 		D062AFDC29D48DD500263A12 /* CDLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062AFDB29D48DD500263A12 /* CDLTests.swift */; };
@@ -33,6 +42,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D029295D29D84B3D00D6C7AC /* IPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPhone.swift; sourceTree = "<group>"; };
+		D029295F29D84B6E00D6C7AC /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
+		D029296129D84B9300D6C7AC /* SOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOC.swift; sourceTree = "<group>"; };
+		D029296329D84B9F00D6C7AC /* Disk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
+		D029296529D84BAF00D6C7AC /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
+		D029296729D84BCB00D6C7AC /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
+		D029296929D84BD600D6C7AC /* DeviceName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceName.swift; sourceTree = "<group>"; };
+		D029296B29D84C0500D6C7AC /* MacAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacAddress.swift; sourceTree = "<group>"; };
+		D029296D29D84C1000D6C7AC /* IPAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddress.swift; sourceTree = "<group>"; };
 		D062AF5029D3AC9C00263A12 /* CDL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CDL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D062AF5329D3AC9D00263A12 /* CDL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDL.h; sourceTree = "<group>"; };
 		D062AF5A29D3ACDC00263A12 /* CDL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDL.swift; sourceTree = "<group>"; };
@@ -94,6 +112,15 @@
 			children = (
 				D062AF5329D3AC9D00263A12 /* CDL.h */,
 				D062AF5A29D3ACDC00263A12 /* CDL.swift */,
+				D029295F29D84B6E00D6C7AC /* Battery.swift */,
+				D029295D29D84B3D00D6C7AC /* IPhone.swift */,
+				D029296129D84B9300D6C7AC /* SOC.swift */,
+				D029296329D84B9F00D6C7AC /* Disk.swift */,
+				D029296529D84BAF00D6C7AC /* Memory.swift */,
+				D029296729D84BCB00D6C7AC /* DeviceModel.swift */,
+				D029296929D84BD600D6C7AC /* DeviceName.swift */,
+				D029296B29D84C0500D6C7AC /* MacAddress.swift */,
+				D029296D29D84C1000D6C7AC /* IPAddress.swift */,
 			);
 			path = CDL;
 			sourceTree = "<group>";
@@ -253,6 +280,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D029296629D84BAF00D6C7AC /* Memory.swift in Sources */,
+				D029296029D84B6E00D6C7AC /* Battery.swift in Sources */,
+				D029296829D84BCB00D6C7AC /* DeviceModel.swift in Sources */,
+				D029296E29D84C1000D6C7AC /* IPAddress.swift in Sources */,
+				D029296429D84B9F00D6C7AC /* Disk.swift in Sources */,
+				D029296A29D84BD600D6C7AC /* DeviceName.swift in Sources */,
+				D029296229D84B9300D6C7AC /* SOC.swift in Sources */,
+				D029296C29D84C0500D6C7AC /* MacAddress.swift in Sources */,
+				D029295E29D84B3D00D6C7AC /* IPhone.swift in Sources */,
 				D062AF5B29D3ACDC00263A12 /* CDL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
